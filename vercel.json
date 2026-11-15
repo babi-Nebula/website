@@ -1,0 +1,7 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "rewrites": [
+    { "source": "/auth-api/:path*", "destination": "/api/auth-api/:path*" }
+  ]
+}

@@ -1,0 +1,12 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title id="title">ENQU MADE emblem</title>
+  <defs>
+    <linearGradient id="field" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#35257e"/><stop offset="1" stop-color="#211653"/></linearGradient>
+    <linearGradient id="thread" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#EF5F18"/><stop offset="1" stop-color="#F5B24B"/></linearGradient>
+  </defs>
+  <rect x="2" y="2" width="60" height="60" rx="18" fill="url(#field)"/>
+  <circle cx="32" cy="32" r="23" fill="none" stroke="#F5B24B" stroke-opacity=".8" stroke-width="1.6"/>
+  <path d="M22 21v22M22 22h20M22 32h15M22 42h20" fill="none" stroke="url(#thread)" stroke-linecap="round" stroke-width="4.2"/>
+  <path d="M42 22v20" fill="none" stroke="#fff" stroke-opacity=".9" stroke-linecap="round" stroke-width="2"/>
+  <path d="m46 28 3.5 4-3.5 4-3.5-4 3.5-4Z" fill="#F5D76E"/>
+</svg>

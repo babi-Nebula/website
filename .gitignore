@@ -1,0 +1,12 @@
+.venv/
+__pycache__/
+*.py[cod]
+enqu-made.db
+.env
+.env.*
+.vercel/
+node_modules/
+backend/.env
+backend/*.sqlite
+backend/*.sqlite-shm
+backend/*.sqlite-wal

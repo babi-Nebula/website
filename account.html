@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="auth-api-base" content="" />
+  <meta name="theme-color" content="#080808" />
+  <title>Sign in | ENQU MADE</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="account.js" defer></script>
+</head>
+<body class="auth-page">
+  <main class="auth-shell">
+    <a class="auth-brand" href="index.html"><span class="auth-mark"><img src="Asset/enqu-made-mark.svg" alt="" /></span><span>ENQU MADE<small>THE BUSINESS MINDSET ETHIOPIA</small></span></a>
+    <section class="auth-card" aria-labelledby="authTitle">
+      <div class="auth-tabs" role="tablist" aria-label="Account access">
+        <button class="auth-tab is-active" type="button" role="tab" aria-selected="true" aria-controls="loginPanel" data-auth-tab="login">Login</button>
+        <button class="auth-tab" type="button" role="tab" aria-selected="false" aria-controls="registerPanel" data-auth-tab="register">Create account</button>
+      </div>
+      <section class="auth-panel" id="loginPanel" role="tabpanel">
+        <p class="auth-eyebrow">WELCOME BACK</p><h1 id="authTitle">Build what matters.</h1>
+        <p class="auth-intro">Sign in to continue shopping. A profile is created automatically the first time you log in.</p>
+        <form id="loginForm" class="auth-form">
+          <label>Email address<input name="email" type="email" autocomplete="email" placeholder="you@company.com" required /></label>
+          <label>Password<span class="auth-password"><input name="password" type="password" autocomplete="current-password" placeholder="Enter your password" required /><button type="button" class="password-toggle" aria-label="Show password">Show</button></span></label>
+          <div class="auth-inline"><label class="auth-check"><input name="remember" type="checkbox" /> Remember me</label><a href="reset-password.html">Forgot password?</a></div>
+          <button class="auth-submit" type="submit"><span>Login</span><span aria-hidden="true">→</span></button>
+        </form>
+        <div class="auth-divider"><span>SECURE ACCESS</span></div>
+        <p class="auth-bottom">New to the community? <button type="button" data-switch-auth="register">Create an account</button></p>
+      </section>
+      <section class="auth-panel" id="registerPanel" role="tabpanel" hidden>
+        <p class="auth-eyebrow">JOIN THE COMMUNITY</p><h1>Create your account.</h1>
+        <p class="auth-intro">Set up your profile for The Business Mindset Ethiopia.</p>
+        <form id="registerForm" class="auth-form">
+          <label>Full name<input name="fullName" autocomplete="name" placeholder="Your full name" required minlength="2" maxlength="100" /></label>
+          <label>Username<input name="username" autocomplete="username" placeholder="Choose a username" required minlength="3" maxlength="24" pattern="[A-Za-z0-9_]{3,24}" /></label>
+          <label>Email address<input name="email" type="email" autocomplete="email" placeholder="you@company.com" required /></label>
+          <label>Password<span class="auth-password"><input id="registerPassword" name="password" type="password" autocomplete="new-password" placeholder="At least 8 characters" required minlength="8" maxlength="72" /><button type="button" class="password-toggle" aria-label="Show password">Show</button></span></label>
+          <div class="strength-track"><span id="strengthMeter"></span></div><p class="strength-copy" id="strengthCopy">Use 8 or more characters.</p>
+          <label>Confirm password<input name="confirmPassword" type="password" autocomplete="new-password" placeholder="Enter your password again" required minlength="8" maxlength="72" /></label>
+          <label class="auth-check"><input name="termsAccepted" type="checkbox" required /> I agree to the <a href="terms.html">Terms and Conditions</a>.</label>
+          <button class="auth-submit" type="submit"><span>Create account</span><span aria-hidden="true">→</span></button>
+        </form>
+        <p class="auth-bottom">Already have an account? <button type="button" data-switch-auth="login">Login</button></p>
+      </section>
+      <p class="auth-feedback" id="authFeedback" role="status" aria-live="polite" hidden></p>
+    </section>
+    <p class="auth-footnote">ENCRYPTED SESSIONS · PRIVATE BY DESIGN</p>
+  </main>
+</body>
+</html>

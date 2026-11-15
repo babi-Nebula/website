@@ -1,0 +1,18 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 72" role="img" aria-labelledby="title desc">
+  <title id="title">ENQU MADE</title>
+  <desc id="desc">Ethiopian art, culture, and handcrafted goods</desc>
+  <defs>
+    <linearGradient id="field" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#35257e"/><stop offset="1" stop-color="#211653"/></linearGradient>
+    <linearGradient id="thread" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#EF5F18"/><stop offset="1" stop-color="#F5B24B"/></linearGradient>
+  </defs>
+  <g transform="translate(3 5)">
+    <rect x="1" y="1" width="60" height="60" rx="18" fill="url(#field)"/>
+    <circle cx="31" cy="31" r="23" fill="none" stroke="#F5B24B" stroke-opacity=".8" stroke-width="1.6"/>
+    <path d="M21 20v22M21 21h20M21 31h15M21 41h20" fill="none" stroke="url(#thread)" stroke-linecap="round" stroke-width="4.2"/>
+    <path d="M41 21v20" fill="none" stroke="#fff" stroke-opacity=".9" stroke-linecap="round" stroke-width="2"/>
+    <path d="m45 27 3.5 4-3.5 4-3.5-4 3.5-4Z" fill="#F5D76E"/>
+  </g>
+  <text x="78" y="37" font-family="Arial, sans-serif" font-size="27" font-weight="800" letter-spacing="1.2"><tspan fill="#261A66">ENQU</tspan><tspan dx="5" fill="#EF5F18">MADE</tspan></text>
+  <path d="M80 45h33" stroke="#F5B24B" stroke-width="2" stroke-linecap="round"/>
+  <text x="120" y="51" fill="#746b83" font-family="Arial, sans-serif" font-size="8.5" font-weight="700" letter-spacing="1.7">ETHIOPIAN ART &amp; CULTURE</text>
+</svg>

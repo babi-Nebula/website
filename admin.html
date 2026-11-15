@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#EF5F18" />
+    <meta name="description" content="ENQU MADE marketplace administration dashboard." />
+    <title>Marketplace admin | ENQU MADE</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="store.js" defer></script>
+    <script src="admin.js" defer></script>
+  </head>
+  <body class="portal-page admin-page">
+    <header class="portal-header admin-header">
+      <a class="brand" href="index.html"><span class="brand-symbol" aria-hidden="true"><img src="Asset/enqu-made-mark.svg" alt="" /></span><span class="brand-name">ENQU MADE<small>MARKETPLACE ADMIN</small></span></a>
+      <nav><span class="admin-local-status"><i aria-hidden="true"></i> Sign in required</span><button type="button" id="adminLogout" hidden>Sign out</button><a href="index.html">View marketplace <span aria-hidden="true">↗</span></a></nav>
+    </header>
+    <main class="portal-main admin-main">
+      <div class="admin-title-row admin-page-title"><div><p class="eyebrow eyebrow-dark"><span></span> MARKETPLACE OVERVIEW</p><h1>Admin dashboard</h1><p class="admin-subtitle">Track artisan growth, marketplace activity, and orders in one place.</p></div><span class="admin-date" id="adminDate"></span></div>
+      <div class="portal-demo-note admin-demo-note"><strong>Live marketplace data</strong><span>Revenue and CAC are estimates based on completed orders and the assumptions below.</span></div>
+
+      <section class="admin-metrics-section" id="overview" aria-labelledby="metricsHeading">
+        <div class="admin-section-heading"><div><p class="eyebrow eyebrow-dark"><span></span> KEY METRICS</p><h2 id="metricsHeading">Marketplace health</h2></div><span class="metric-period">Current month</span></div>
+        <div class="metric-controls" aria-label="Metric assumptions">
+          <label>Platform fee <span><input id="commissionRate" type="number" min="0" max="100" step="0.5" value="10" />%</span><small>Used to estimate platform revenue from completed order value.</small></label>
+          <label>Marketing spend this month <span><b>ETB</b><input id="marketingSpend" type="number" min="0" step="100" value="0" /></span><small>Used to estimate cost per newly acquired customer.</small></label>
+          <button type="button" id="saveMetricSettings">Save assumptions</button>
+          <p id="adminFeedback" class="admin-feedback" role="status" hidden></p>
+        </div>
+        <div class="admin-metric-grid">
+          <article class="admin-metric-card"><div class="metric-card-top"><span class="metric-icon">✦</span><span class="metric-index">01</span></div><h3>Registered artisans</h3><strong data-metric="registeredSellers">0</strong><p>Number of sellers joining the platform.</p></article>
+          <article class="admin-metric-card"><div class="metric-card-top"><span class="metric-icon">◉</span><span class="metric-index">02</span></div><h3>Active sellers</h3><strong data-metric="activeSellers">0</strong><p>Approved sellers with at least one active product listing.</p></article>
+          <article class="admin-metric-card"><div class="metric-card-top"><span class="metric-icon">↗</span><span class="metric-index">03</span></div><h3>Monthly transactions</h3><strong data-metric="monthlyTransactions">0</strong><p>Completed purchases this calendar month.</p></article>
+          <article class="admin-metric-card metric-card-featured"><div class="metric-card-top"><span class="metric-icon">◈</span><span class="metric-index">04</span></div><h3>Gross merchandise value</h3><strong data-metric="gmv">ETB 0</strong><p>Total value of completed products sold this month.</p></article>
+          <article class="admin-metric-card"><div class="metric-card-top"><span class="metric-icon">▤</span><span class="metric-index">05</span></div><h3>Revenue</h3><strong data-metric="revenue">ETB 0</strong><p>Estimated platform income using the fee assumption above.</p></article>
+          <article class="admin-metric-card"><div class="metric-card-top"><span class="metric-icon">◎</span><span class="metric-index">06</span></div><h3>Customer acquisition cost</h3><strong data-metric="cac">—</strong><p>Marketing spend divided by new customers this month.</p></article>
+          <article class="admin-metric-card"><div class="metric-card-top"><span class="metric-icon">↻</span><span class="metric-index">07</span></div><h3>Customer retention rate</h3><strong data-metric="retention">0%</strong><p>Current-month buyers who have made a repeat purchase.</p></article>
+          <article class="admin-metric-card"><div class="metric-card-top"><span class="metric-icon">◷</span><span class="metric-index">08</span></div><h3>Average order value</h3><strong data-metric="averageOrder">ETB 0</strong><p>Completed product value divided by completed orders this month.</p></article>
+          <article class="admin-metric-card metric-card-featured"><div class="metric-card-top"><span class="metric-icon">↗</span><span class="metric-index">09</span></div><h3>Seller income growth</h3><strong data-metric="sellerGrowth">0%</strong><p>Change in seller earnings versus the previous calendar month.</p></article>
+        </div>
+        <p class="metric-footnote">Metrics use completed orders only. Customer identity is matched by email; seller income is grouped by the seller name saved on each order item.</p>
+      </section>
+
+      <div class="admin-workspace admin-dashboard-workspace">
+        <aside class="admin-sidebar"><strong>Manage marketplace</strong><a href="#overview" class="is-current">Overview</a><a href="#sellers">Sellers <span id="sellerNavCount">0</span></a><a href="#products">Products <span id="productNavCount">0</span></a><a href="#orders">Orders <span id="orderNavCount">0</span></a><a href="seller.html">Seller registration ↗</a></aside>
+        <div class="admin-content">
+          <section class="admin-section admin-manage-section" id="sellers" aria-labelledby="sellersHeading"><div class="section-heading-row"><div><p class="eyebrow eyebrow-dark"><span></span> SELLER MANAGEMENT</p><h2 id="sellersHeading">Registered artisans</h2></div><span class="admin-section-count" id="sellerCount">0 sellers</span></div><div class="admin-table-wrap"><table class="admin-table"><thead><tr><th>Seller / studio</th><th>Contact</th><th>Location</th><th>Joined</th><th>Review status</th></tr></thead><tbody id="sellerTableBody"></tbody></table></div><p class="admin-empty" id="sellerEmpty" hidden>No seller applications yet. New applications appear here after registration.</p></section>
+          <section class="admin-section admin-manage-section" id="products" aria-labelledby="productsHeading"><div class="section-heading-row"><div><p class="eyebrow eyebrow-dark"><span></span> CATALOG MANAGEMENT</p><h2 id="productsHeading">Products</h2></div><span class="admin-section-count" id="productCount">0 products</span></div><form class="admin-product-create" id="adminProductForm"><label>Product name<input name="name" required maxlength="120" placeholder="Name your product" /></label><label>Seller or maker<input name="seller" required maxlength="100" placeholder="Seller / studio name" /></label><label>Category<select name="category" required><option value="">Choose</option><option>Clothing & textiles</option><option>Home & basketry</option><option>Coffee & pottery</option><option>Art & heritage</option><option>Jewelry & accessories</option><option>Music & culture</option><option>Other handmade goods</option></select></label><label>Price (ETB)<input name="price" type="number" min="0" step="1" required placeholder="0" /></label><button type="submit">Add product <span aria-hidden="true">＋</span></button></form><div class="admin-table-wrap"><table class="admin-table"><thead><tr><th>Product</th><th>Seller</th><th>Category</th><th>Price</th><th>Visibility</th><th>Action</th></tr></thead><tbody id="productTableBody"></tbody></table></div><p class="admin-empty" id="productEmpty" hidden>No products in the catalog yet. Add a product using the form above.</p></section>
+          <section class="admin-section admin-manage-section" id="orders" aria-labelledby="ordersHeading"><div class="section-heading-row"><div><p class="eyebrow eyebrow-dark"><span></span> ORDER MANAGEMENT</p><h2 id="ordersHeading">Recent orders</h2></div><span class="admin-section-count" id="orderCount">0 orders</span></div><div class="admin-table-wrap"><table class="admin-table"><thead><tr><th>Order</th><th>Customer</th><th>Items</th><th>Total</th><th>Placed</th><th>Status</th></tr></thead><tbody id="orderTableBody"></tbody></table></div><p class="admin-empty" id="orderEmpty" hidden>No order requests yet. Orders placed through the marketplace appear here.</p></section>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

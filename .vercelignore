@@ -1,0 +1,15 @@
+.env
+.env.*
+!.env.example
+backend/.env
+backend/*.sqlite
+backend/*.sqlite-shm
+backend/*.sqlite-wal
+enqu-made.db
+*.db
+*.db-shm
+*.db-wal
+.venv/
+__pycache__/
+node_modules/
+.git/
