@@ -1,7 +1,8 @@
 {
-  "cleanUrls": true,
-  "trailingSlash": false,
-  "rewrites": [
-    { "source": "/auth-api/:path*", "destination": "/api/auth-api/:path*" }
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "fastapi",
+  "routes": [
+    { "src": "^/auth-api/(.*)$", "dest": "/api/auth-api/$1" },
+    { "src": "^/(.*)$", "dest": "/app.py" }
   ]
 }
